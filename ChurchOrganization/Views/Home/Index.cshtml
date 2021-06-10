@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap.css" />
+<link rel="stylesheet" href="~/Content/Site.css" />
+
+<body>
+    <div class="jumbotron">
+        @Html.ActionLink("Members", "ShowMembers", "Members") |
+
+        @Html.ActionLink("Callings", "ShowCallings", "Callings") |
+
+        @Html.ActionLink("Units", "ShowUnits", "Units")
+</div>
+</body>

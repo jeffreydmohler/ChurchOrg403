@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ChurchOrganization.Models.Callings>
+
+@{
+    ViewBag.Title = "Callings";
+}
+
+<h2>Callings</h2>
+
+<p>
+    @Html.ActionLink("Add a Calling", "AddCalling")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.callingCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.callingOrganization)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.callingCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.callingOrganization)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCalling", new { iCode = item.callingCode }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
